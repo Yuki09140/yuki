@@ -379,6 +379,7 @@
   "liquidbounce.module.godMode.description": "Allows you to be invulnerable.",
   "liquidbounce.module.handDerp.description": "Switches your hand side left-to-right constantly.",
   "liquidbounce.module.hideClient.description": "Hides the client's own appearance. Can be toggled in any GUI with 2x CRTL+SHIFT",
+  "liquidbounce.module.hideClient.messages.information": "Hide Client is now enabled and will remain enabled until you type: .t HideClient",
   "liquidbounce.module.highJump.description": "Allows you to jump higher.",
   "liquidbounce.module.hitbox.description": "Enlarges the hitbox of other entities.",
   "liquidbounce.module.holeESP.description": "Highlights holes.",

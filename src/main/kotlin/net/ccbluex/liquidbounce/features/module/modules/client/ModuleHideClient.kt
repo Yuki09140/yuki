@@ -26,7 +26,9 @@ import net.ccbluex.liquidbounce.features.misc.HideClient
 import net.ccbluex.liquidbounce.features.module.Category
 import net.ccbluex.liquidbounce.features.module.Module
 import net.ccbluex.liquidbounce.utils.client.Chronometer
+import net.ccbluex.liquidbounce.utils.client.chat
 import net.ccbluex.liquidbounce.utils.client.inGame
+import net.ccbluex.liquidbounce.utils.client.regular
 import net.ccbluex.liquidbounce.web.integration.IntegrationHandler
 import org.lwjgl.glfw.GLFW
 
@@ -35,13 +37,15 @@ import org.lwjgl.glfw.GLFW
  */
 object ModuleHideClient : Module("HideClient", Category.CLIENT, hide = true) {
 
-    val shiftChronometer = Chronometer()
+    private val shiftChronometer = Chronometer()
 
     override fun enable() {
         HideClient.isHidingNow = true
 
         // This will cause a refresh of the current screen
         IntegrationHandler.restoreOriginalScreen()
+
+        chat(regular(message("information")))
         super.enable()
     }
 

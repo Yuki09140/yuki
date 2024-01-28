@@ -20,6 +20,7 @@ package net.ccbluex.liquidbounce.features.module.modules.render
 
 import com.google.gson.JsonObject
 import com.mojang.blaze3d.systems.RenderSystem
+import net.ccbluex.liquidbounce.features.misc.HideClient
 import net.ccbluex.liquidbounce.features.module.Category
 import net.ccbluex.liquidbounce.features.module.Module
 import net.ccbluex.liquidbounce.render.engine.Color4b
@@ -58,7 +59,7 @@ object ModuleClickGui : Module("ClickGUI", Category.RENDER, bind = GLFW.GLFW_KEY
 
     override fun enable() {
         // Pretty sure we are not in a game, so we can't open the clickgui
-        if (mc.player == null || mc.world == null) {
+        if (mc.player == null || mc.world == null || HideClient.isHidingNow) {
             return
         }
 

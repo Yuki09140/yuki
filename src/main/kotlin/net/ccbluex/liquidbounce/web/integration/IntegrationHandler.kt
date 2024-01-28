@@ -169,6 +169,8 @@ object IntegrationHandler : Listenable {
     fun restoreOriginalScreen() {
         if (mc.currentScreen is VrScreen) {
             mc.setScreen((mc.currentScreen as VrScreen).originalScreen)
+        } else if (inGame) {
+            mc.setScreen(null)
         }
     }
 

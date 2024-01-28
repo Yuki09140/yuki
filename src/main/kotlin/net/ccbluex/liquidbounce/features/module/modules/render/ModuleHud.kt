@@ -20,6 +20,7 @@ package net.ccbluex.liquidbounce.features.module.modules.render
 
 import net.ccbluex.liquidbounce.event.events.ScreenEvent
 import net.ccbluex.liquidbounce.event.handler
+import net.ccbluex.liquidbounce.features.misc.HideClient
 import net.ccbluex.liquidbounce.features.module.Category
 import net.ccbluex.liquidbounce.features.module.Module
 import net.ccbluex.liquidbounce.utils.client.inGame
@@ -42,7 +43,7 @@ object ModuleHud : Module("HUD", Category.RENDER, state = true, hide = true) {
         get() = "liquidbounce.module.hud"
 
     val screenHandler = handler<ScreenEvent>(ignoreCondition = true) {
-        if (!enabled || !inGame || it.screen is DisconnectedScreen) {
+        if (!enabled || !inGame || it.screen is DisconnectedScreen || HideClient.isHidingNow) {
             browserTab?.closeTab()
             browserTab = null
         } else if (browserTab == null) {
