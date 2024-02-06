@@ -46,7 +46,7 @@
 
     {#if reference.choices[reference.active].value.length > 0}
       <div class="settings" transition:fade|local={{duration: 200, easing: sineInOut}}>
-        {#each reference.choices[reference.active].value as s}
+        {#each reference.choices[reference.active].value as s (s.valueType+"-"+s.name)}
             <GenericSetting reference={s} write={write} />
         {/each}
       </div>

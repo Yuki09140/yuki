@@ -58,7 +58,7 @@
     {#if expanded}
         <div class="settings" transition:slide={{duration: 400, easing: sineInOut}}>
             <p class="description">{description}</p>
-            {#each configurable.value as s}
+            {#each configurable.value as s (s.valueType+"-"+s.name)}
                 <GenericSetting reference={s} write={writeSettings} />
             {/each}
         </div>
