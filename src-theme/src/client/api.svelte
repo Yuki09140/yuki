@@ -108,6 +108,16 @@
         return request("/servers")
     }
 
+    export function connectServer(address) {
+        return request("/servers/connect", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ "address": address })
+        })
+    }
+
     export function getLocalPlayer() {
         return request("/player")
     }
@@ -629,6 +639,33 @@
     export function panic() {
         return request("/modules/panic", {
             method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+    }
+
+    export function getProtocols() {
+        return request("/protocols")
+    }
+
+    export function getProtocol() {
+        return request("/protocols/protocol")
+    }
+
+    export function setProtocol(version) {
+        return request("/protocols/protocol", {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ "version": version })
+        })
+    }
+
+    export function deleteProtocol() {
+        return request("/protocols/protocol", {
+            method: "DELETE",
             headers: {
                 "Content-Type": "application/json"
             }

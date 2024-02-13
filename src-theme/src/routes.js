@@ -8,6 +8,7 @@ import Container from "./routes/container/Container.svelte";
 import Customize from "./routes/customize/Customize.svelte";
 import Inventory from "./routes/inventory/Inventory.svelte";
 import Disconnected from "./routes/disconnected/Disconnected.svelte";
+import Multiplayer from "./routes/multiplayer/Multiplayer.svelte";
 
 export const routes = {
     '/': Splashscreen,
@@ -19,5 +20,6 @@ export const routes = {
     '/container': Container,
     '/inventory': Inventory,
     '/customize': Customize,
-    '/disconnected': Disconnected
+    '/disconnected': Disconnected,
+    '/multiplayer': Multiplayer,
 }
