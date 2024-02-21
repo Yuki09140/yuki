@@ -117,7 +117,7 @@ dependencies {
 
     implementation "com.github.CCBlueX:DiscordIPC:-SNAPSHOT"
 
-    implementation 'org.graalvm.sdk:graal-sdk:23.0.3'
+    implementation 'org.graalvm.sdk:graal-sdk:23.1.2'
     implementation 'org.graalvm.truffle:truffle-api:23.0.3'
     implementation 'org.graalvm.js:js:23.0.3'
 
@@ -279,7 +279,7 @@ shadowJar {
         include(dependency('com.github.CCBlueX:DiscordIPC'))
         include(dependency('com.thealtening.api:api'))
         include(dependency('net.fabricmc:tiny-mappings-parser'))
-        include(dependency('org.graalvm.sdk:graal-sdk:23.0.3'))
+        include(dependency('org.graalvm.sdk:graal-sdk:23.1.2'))
         include(dependency('org.graalvm.truffle:truffle-api:23.0.3'))
         include(dependency('org.graalvm.js:js:23.0.3'))
         include(dependency('io.netty:netty-codec'))
